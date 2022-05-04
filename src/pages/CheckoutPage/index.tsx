@@ -79,7 +79,6 @@ const CheckoutPage = () => {
     initializePayment(onSuccess, onClose);
   };
 
-  // you can call this function anything
   const onSuccess = (ref: any) => {
     // Implementation for whatever you want to do with reference and after success call.
     setReference(ref);
@@ -87,7 +86,6 @@ const CheckoutPage = () => {
     emptyCart();
   };
 
-  // you can call this function anything
   const onClose = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log("closed");
@@ -213,7 +211,7 @@ const CheckoutPage = () => {
               </Text>
               <Text>Your order has been placed successfully.</Text>
               <Text>You'll receive delivery in the next 48hrs.</Text>
-              <Text>Your transaction id is {reference.id}</Text>
+              <Text>Your transaction id is {reference?.transaction}</Text>
             </Box>
           </ModalBody>
           <ModalFooter>
