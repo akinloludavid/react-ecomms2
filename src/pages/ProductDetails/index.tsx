@@ -1,9 +1,8 @@
 import React from "react";
-import { Box, Text, Flex, Image, Button } from "@chakra-ui/react";
+import { Box, Text, Flex, Image } from "@chakra-ui/react";
 import { MdArrowBack } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import { useGetProductById } from "../../services/query/products";
-import { FaShoppingCart } from "react-icons/fa";
 import { convertPriceToNaira } from "../../utils/helper";
 import AddToCartButton from "../../components/AddToCart/Button";
 const ProductDetails = () => {

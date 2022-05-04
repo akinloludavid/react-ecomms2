@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Input, Button, Flex, Text } from "@chakra-ui/react";
+import { Input, Button, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import useCustomToast from "../../utils/notifications";
 import { useSignup } from "../../services/query/auth";
@@ -34,9 +34,6 @@ const Signup = () => {
     password,
     name: { firstname, lastname },
     phone,
-    address: {
-      geolocation: { lat, long },
-    },
   } = userDetails;
 
   const { mutate, isLoading: isSignupLoading } = useSignup({
@@ -146,7 +143,9 @@ const Signup = () => {
           placeholder="password"
         />
 
-        <Button onClick={handleSubmit}>SIGN UP</Button>
+        <Button onClick={handleSubmit} isLoading={isSignupLoading}>
+          SIGN UP
+        </Button>
 
         <Flex mt={3} gap={2}>
           <Text>Already have an account?</Text>

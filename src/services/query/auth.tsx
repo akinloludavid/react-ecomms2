@@ -1,5 +1,4 @@
 import { useMutation } from "react-query";
-import { IUserLoginDetails } from "../../types";
 import { userLogin, userSignUp } from "../api/auth";
 
 export const useLogin = (options = {}) => {

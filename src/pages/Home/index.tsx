@@ -4,11 +4,9 @@ import CardComp from "../../components/Card";
 import { useGetAllProducts } from "../../services/query/products";
 import { IGetAllProducts } from "../../types";
 import { Link } from "react-router-dom";
-import LoadingCards, {
-  HomePageCardLoaders,
-} from "../../components/Loaders/LoadingCards";
+import { HomePageCardLoaders } from "../../components/Loaders/LoadingCards";
 import FilterSection from "../../components/filter-section";
-import { useCartStore, useStore } from "../../zust/store";
+import { useStore } from "../../zust/store";
 import useCustomToast from "../../utils/notifications";
 
 const getFilteredProducts = (arr: any[], query: string) => {

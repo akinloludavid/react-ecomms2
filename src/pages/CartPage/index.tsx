@@ -31,6 +31,7 @@ const CartPage = () => {
 
   useEffect(() => {
     getTotalAmount();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
   const handleIncreaseProductQuantity = (prod: any) => {
     increaseProductQty(prod);

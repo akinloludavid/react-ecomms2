@@ -29,7 +29,7 @@ const Navbar = () => {
 
   useEffect(() => {
     !isMobile && onClose();
-  }, [isMobile]);
+  }, [isMobile, onClose]);
   return (
     <>
       <Modal onClose={onClose} size={"lg"} isOpen={isOpen}>

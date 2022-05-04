@@ -1,6 +1,5 @@
 import React, { SyntheticEvent, useState } from "react";
 import {
-  Box,
   Input,
   Button,
   Flex,
@@ -18,18 +17,13 @@ import { useUserStore } from "../../zust/store";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { user, saveUserDetails } = useUserStore();
+  const { saveUserDetails } = useUserStore();
   const { successToast, errorToast } = useCustomToast();
   const [userDetails, setUserDetails] = useState({
     username: "",
     password: "",
   });
-  const [validationError, setValidationError] = useState({
-    userNameError: "",
-    passwordError: "",
-  });
 
-  const { userNameError, passwordError } = validationError;
   const [passwordType, setPasswordType] = useState("password");
 
   const { username, password } = userDetails;
