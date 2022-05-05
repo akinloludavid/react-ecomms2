@@ -46,7 +46,7 @@ const CartPage = () => {
 
   const cartLength = cart.length;
   return (
-    <Box p={[2, 10, 10, 20]}>
+    <Box p={[2, 10, 10, 20]} mb={4}>
       <Flex align={"center"} gap={2}>
         <Box
           display="flex"
@@ -203,6 +203,7 @@ const CartPage = () => {
             display={"flex"}
             gap={2}
             mt={8}
+            mb={4}
             width={"100%"}
             onClick={() => navigate("/checkout")}
           >

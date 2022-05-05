@@ -109,8 +109,8 @@ const CheckoutPage = () => {
       </Flex>
       <Flex
         bgColor={"#FFF"}
-        width={["90%", "50%"]}
-        p={4}
+        width={["90%", "80%", "50%"]}
+        p={[4, 4, 4, 24]}
         borderRadius="lg"
         flexDirection="column"
       >

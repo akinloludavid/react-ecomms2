@@ -48,6 +48,7 @@ const Home = () => {
         ]}
         gap={6}
         p={4}
+        mb={6}
       >
         {allProducts?.map((product: IGetAllProducts) => (
           <Link key={product.id} to={`/product/${product.id}`}>

@@ -5,13 +5,14 @@ import { Link, useParams } from "react-router-dom";
 import { useGetProductById } from "../../services/query/products";
 import { convertPriceToNaira } from "../../utils/helper";
 import AddToCartButton from "../../components/AddToCart/Button";
+import ProductDetailsLoader from "../../components/Loaders/ProductDetailsLoader";
 const ProductDetails = () => {
   const { productId = "" } = useParams();
 
   const { data: product, isLoading } = useGetProductById(productId);
 
   if (isLoading) {
-    return <h2>loadding</h2>;
+    return <ProductDetailsLoader />;
   }
   return (
     <Box p={"40px"}>
