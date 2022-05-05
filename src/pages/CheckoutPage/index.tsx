@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Flex,
+  FormLabel,
   Input,
   Modal,
   ModalBody,
@@ -14,7 +15,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCartStore, useUserStore } from "../../zust/store";
 import { usePaystackPayment } from "react-paystack";
 import * as Yup from "yup";
@@ -99,19 +100,29 @@ const CheckoutPage = () => {
       bgColor={"gray.200"}
       height="100vh"
       overflowY={"hidden"}
+      gap={2}
     >
+      <Flex>
+        <Text fontSize={"24px"} fontWeight="semibold">
+          Checkout Page
+        </Text>
+      </Flex>
       <Flex
         bgColor={"#FFF"}
-        width={["90%", "60%"]}
+        width={["90%", "50%"]}
         p={4}
+        borderRadius="lg"
         flexDirection="column"
       >
         <Text mb={2} fontSize={["lg", " -0xl"]} fontWeight="bold">
-          Fill in your details
+          Fill in your details. Ensure your address is well detailed
         </Text>
         <form onSubmit={formik.handleSubmit}>
           <Flex gap={[0, 4]} direction={["column", "row"]}>
             <Box w="100%">
+              <FormLabel mb={"1"} color={"gray"}>
+                First Name
+              </FormLabel>
               <Input
                 mb="4"
                 name="firstname"
@@ -127,6 +138,9 @@ const CheckoutPage = () => {
               ) : null}
             </Box>
             <Box w="100%">
+              <FormLabel mb={"1"} color={"gray"}>
+                Last Name
+              </FormLabel>
               <Input
                 mb="4"
                 name="lastname"
@@ -142,7 +156,9 @@ const CheckoutPage = () => {
               ) : null}
             </Box>
           </Flex>
-
+          <FormLabel mb={"1"} color={"gray"}>
+            Phone Number
+          </FormLabel>
           <Input
             mb="4"
             name="phone"
@@ -156,6 +172,9 @@ const CheckoutPage = () => {
               {formik.errors.phone}
             </Text>
           ) : null}
+          <FormLabel mb={"1"} color={"gray"}>
+            Email
+          </FormLabel>
           <Input
             name="email"
             mb="4"
@@ -169,6 +188,9 @@ const CheckoutPage = () => {
               {formik.errors.email}
             </Text>
           ) : null}
+          <FormLabel mb={"1"} color={"gray"}>
+            Address
+          </FormLabel>
           <Input
             name="address"
             onChange={formik.handleChange}
@@ -187,12 +209,6 @@ const CheckoutPage = () => {
             PROCEED TO PAY {convertPriceToNaira(totalAmt)}
           </Button>
         </form>
-        <Flex mt={3} gap={2}>
-          <Text>Already have an account?</Text>
-          <Link to="/signin" style={{ textDecoration: "underline" }}>
-            Sign In
-          </Link>
-        </Flex>
       </Flex>
       <Modal
         isCentered
