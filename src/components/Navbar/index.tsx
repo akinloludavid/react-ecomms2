@@ -1,38 +1,27 @@
-import React, { useEffect } from "react";
-import {
-  Box,
-  Button,
-  Flex,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalOverlay,
-  Text,
-  useMediaQuery,
-  useDisclosure,
-} from "@chakra-ui/react";
+import React from "react";
+import { Box, Flex, Text, useMediaQuery, Image } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { useCartStore, useUserStore } from "../../zust/store";
+import { useCartStore } from "../../zust/store";
 import { MdShoppingCart } from "react-icons/md";
-import { FaEllipsisV } from "react-icons/fa";
+import logo from "../../assets/logo512.png";
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [isMobile] = useMediaQuery("(max-width: 375px)");
   const navigate = useNavigate();
   const cart = useCartStore((state) => state.cart);
-  const { user, removeUserDetails } = useUserStore((state) => state);
-  const handleLogout = () => {
-    removeUserDetails();
-    navigate("/");
-  };
+  // const { user, removeUserDetails } = useUserStore((state) => state);
+  // const handleLogout = () => {
+  //   removeUserDetails();
+  //   navigate("/");
+  // };
 
-  useEffect(() => {
-    !isMobile && onClose();
-  }, [isMobile, onClose]);
+  // useEffect(() => {
+  //   !isMobile && onClose();
+  // }, [isMobile, onClose]);
   return (
     <>
-      <Modal onClose={onClose} size={"lg"} isOpen={isOpen}>
+      {/* <Modal onClose={onClose} size={"lg"} isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent w={"40%"} ml="auto">
           <ModalBody w={"100%"} m="auto">
@@ -74,21 +63,23 @@ const Navbar = () => {
             </>
           </ModalBody>
         </ModalContent>
-      </Modal>
+      </Modal> */}
       <Flex
         justify={"space-between"}
         align="center"
         width={"100vw"}
         height="60px"
         px={[4, 10]}
-        backgroundColor="cyan.600"
+        backgroundColor="gray.700"
       >
         <Box>
-          <Link to={"/"}>
-            <Text fontSize={"32px"} fontWeight="500">
-              E=COMMS
-            </Text>
-          </Link>
+          <Image
+            cursor={"pointer"}
+            onClick={() => navigate("/")}
+            w={["12%", "8%"]}
+            src={logo}
+            alt="buymore logo"
+          />
         </Box>
 
         <Flex align={"center"} display={"flex"} gap={4}>
@@ -121,14 +112,14 @@ const Navbar = () => {
               </Box>
             </Box>
           </Link>
-          {isMobile && (
+          {/* {isMobile && (
             <FaEllipsisV
               size={18}
               cursor="pointer"
               color="#fff"
               onClick={onOpen}
             />
-          )}
+          )} */}
         </Flex>
       </Flex>
     </>

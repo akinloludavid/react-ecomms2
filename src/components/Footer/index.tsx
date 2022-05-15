@@ -9,7 +9,7 @@ const Footer = () => {
       py={3}
       mb={0}
       mt="auto"
-      bgColor="cyan.500"
+      bgColor="gray.700"
       color="#f3f3f3"
       height={"120px"}
     >
