@@ -98,11 +98,13 @@ const CheckoutPage = () => {
       justify={"center"}
       align="center"
       bgColor={"gray.200"}
-      height="100vh"
-      overflowY={"hidden"}
+      height="100%"
+      overflowY={"scroll"}
       gap={2}
+      py={8}
     >
-      <Flex>
+      <Flex mt={8}>
+        {" "}
         <Text fontSize={"24px"} fontWeight="semibold">
           Checkout Page
         </Text>
@@ -113,6 +115,7 @@ const CheckoutPage = () => {
         p={[4, 4, 4, 24]}
         borderRadius="lg"
         flexDirection="column"
+        mb={8}
       >
         <Text mb={2} fontSize={["lg", " -0xl"]} fontWeight="bold">
           Fill in your details. Ensure your address is well detailed

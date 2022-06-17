@@ -7,7 +7,7 @@ interface IChildren {
 }
 const PageWrapper = ({ children }: IChildren) => {
   return (
-    <Box display={"flex"} flexDirection="column" w="100%" height={"100vh"}>
+    <Box display={"flex"} flexDirection="column" w="100%" minH={"100vh"}>
       <Navbar />
       {children}
       <Box mt={"auto"}>
