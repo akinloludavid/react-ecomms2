@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  buymore_client:
+    build: ./
+    container_name: buymore_client_container
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - ./app/node_modules

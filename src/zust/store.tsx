@@ -84,7 +84,7 @@ export const useCartStore = create(
 
 export const useUserStore = create(
   persist(
-    (set: Function, get: Function) => ({
+    (set: Function) => ({
       user: undefined,
 
       saveUserDetails: (userInfo: any) =>
